@@ -1,0 +1,30 @@
+# Build
+build/
+cmake-build-*/
+
+# Output
+output/
+output_gui/
+results/
+wykresy/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+venv/
+
+# Binaries
+*.exe
+*.out
+*.o
+*.obj
