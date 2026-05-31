@@ -16,7 +16,7 @@ echo "=== ROZPOCZĘCIE PEŁNEGO BENCHMARKU ==="
 for SIZE in "${SIZES[@]}"; do
     echo "--- Testowanie dla siatki ${SIZE}x${SIZE} ---"
 
-    # 1. Sequential
+    # 1. Sekwencyjnie
     echo "Uruchamianie Sequential (Rozmiar: $SIZE)"
     ./build/bin/diffusion_seq --size $SIZE --iterations $ITERS --stencil $STENCIL --benchmark > "$RESULTS_DIR/seq_${SIZE}.txt"
 

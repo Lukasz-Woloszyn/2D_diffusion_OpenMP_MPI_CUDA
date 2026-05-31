@@ -1,14 +1,18 @@
 # Sprawozdanie: Rozprzestrzenianie Koloru (Dyfuzja na Siatce 2D)
 
+### Łukasz Wołoszyn
+### Jakub Wójcikiewicz
+### CY4
+
 ## 1. Opis Projektu
 
-Projekt realizuje symulację rozlewania się koloru po dwuwymiarowej siatce (domyślnie 1000×1000 pikseli). Na początku w kilku punktach siatki rozmieszczone są źródła koloru (czerwony, zielony, niebieski, żółty, magenta, cyjan), które z każdą iteracją rozlewają się na sąsiednie pola. Wartość koloru w każdej komórce jest obliczana jako średnia z jej sąsiadów, co modeluje proces dyfuzji podobny do rozchodzenia się ciepła lub farby na powierzchni.
+Projekt realizuje symulację rozlewania się koloru po dwuwymiarowej siatce. Na początku w kilku punktach siatki rozmieszczone są źródła koloru (czerwony, zielony, niebieski, żółty, magenta, cyjan), które z każdą iteracją rozlewają się na sąsiednie pola. Wartość koloru w każdej komórce jest obliczana jako średnia z jej sąsiadów, co modeluje proces dyfuzji podobny do rozchodzenia się ciepła lub farby na powierzchni.
 
 ### Algorytm dyfuzji
 
 W każdej iteracji, dla każdej komórki `(x, y)` obliczana jest nowa wartość jako średnia arytmetyczna wartości jej sąsiadów. Dostępne są dwa szablony:
 
-- **5-punktowy**: centrum + 4 sąsiedzi (góra, dół, lewo, prawo)
+- **5-punktowy**: centrum + 4 sąsiadów (boki)
 - **9-punktowy**: centrum + 8 sąsiadów (w tym przekątne)
 
 Wzór (szablon 5-punktowy):
@@ -20,21 +24,20 @@ Na brzegach siatki stosowane są warunki brzegowe (komórki poza siatką nie są
 
 ## 2. Podział Pracy
 
-| Zadanie | Autor 1 | Autor 2 |
+| Zadanie | Łukasz | Jakub |
 |---------|---------|---------|
 | Implementacja sekwencyjna | ✓ | |
-| Implementacja OpenMP | ✓ | |
-| Implementacja MPI | | ✓ |
+| Implementacja OpenMP | | ✓ |
+| Implementacja MPI | ✓ | |
 | Implementacja CUDA | | ✓ |
-| Wizualizacja GUI (Python) | ✓ | |
+| Wizualizacja GUI (Python) | ✓ | ✓ |
 | Testy wydajnościowe | ✓ | ✓ |
-| Dokumentacja | ✓ | ✓ |
 
 ---
 
 ## 3. Konfiguracja Testowa
 
-### Komputer Testowy
+### Komputer Testowy #1
 | Parametr | Wartość |
 |----------|---------|
 | Procesor | AMD Ryzen 7 4800H |
@@ -43,6 +46,16 @@ Na brzegach siatki stosowane są warunki brzegowe (komórki poza siatką nie są
 | System | Ubuntu 24.04 (WSL) pod kontrolą Windows |
 | Karta Graficzna | NVIDIA GeForce RTX 2060 |
 | Pamięć VRAM | 6 GB GDDR6 |
+
+### Komputer Testowy #2
+| Parametr | Wartość |
+|----------|---------|
+| Procesor | Intel i5-12400F |
+| Rdzenie/Wątki | 8 rdzeni / 12 wątków |
+| RAM | 32 GB (8 GB przydzielone dla WSL) |
+| System | Ubuntu 24.04 (WSL) pod kontrolą Windows |
+| Karta Graficzna | NVIDIA GeForce RTX 4060 |
+| Pamięć VRAM | 8 GB GDDR6 |
 
 ---
 
@@ -113,7 +126,6 @@ sR += tile[((ly-1)*tileW+lx)*3];
 
 ## 5. Instrukcja Obsługi
 
-Aplikacja zyskała całkowicie nowy, w pełni graficzny interfejs, z którego wywoływane są wszystkie obliczenia i symulacje.
 
 ### 5.1 Kompilacja i przygotowanie środowiska
 ```bash
@@ -231,7 +243,7 @@ Po przeprowadzeniu testów, wykresy analityczne są renderowane do plików PNG d
 
 ## 8. Wnioski
 
-- **Skalowalność dla małych siatek (500x500):** W przypadku mniejszych rozmiarów danych, obie implementacje wielordzeniowe na CPU (OpenMP i MPI) skalują się bardzo dobrze dochodząc do przyśpieszenia rzędu 4.8x przy 8 wątkach. Wersja GPU z blokiem 16x16 daje ogromne przyspieszenie (~18.8x), jednakże blok 32x32 jest w tym przypadku paradoksalnie znacznie wolniejszy (~8.4x), co wynika ze zbyt małej siatki do optymalnego wypełnienia tak dużych bloków.
+- **Skalowalność dla małych siatek (500x500):** W przypadku mniejszych rozmiarów danych, obie implementacje wielordzeniowe na CPU (OpenMP i MPI) skalują się bardzo dobrze dochodząc do przyśpieszenia rzędu 4.8x przy 8 wątkach. Wersja GPU z blokiem 16x16 daje ogromne przyspieszenie (18.8x), jednakże blok 32x32 jest w tym przypadku paradoksalnie znacznie wolniejszy (8.4x), co wynika ze zbyt małej siatki do optymalnego wypełnienia tak dużych bloków.
 - **Skalowalność dla dużych siatek (1000x1000, 2000x2000):** W miarę wzrostu rozmiaru problemu, obie wersje CPU szybciej napotykają tzw. "memory wall" (wąskie gardło pamięci RAM). Przy 8 wątkach ich wydajność "spłaszcza" się w okolicach maksymalnie 2.8x do 2.9x (efektywność drastycznie spada do poziomu ~35%). 
 - **Zestawienie OpenMP a MPI:** Niezależnie od rozmiaru siatki, OpenMP i MPI na jednej maszynie testowej wykazują identyczne czasy i niemal taką samą skalowalność. Dowodzi to tego, że wymiana pasów granicznych "halo" na tej samej maszynie nie jest dużo wolniejsza niż konwencjonalne synchronizowanie współdzielonej pamięci.
 - **Ogromna przewaga CUDA na wielkich siatkach:** Jeśli siatka rośnie, rośnie też przyspieszenie w architekturze GPU. Dla siatki 2000x2000 praca jest w stanie optymalnie obciążyć dostępne multiprocesory przy bloku 32x32, notując najwyższe przyśpieszenie w całym eksperymencie, wynoszące blisko **30x** i redukujące czas obliczeń z 15.75s do 0.52s.

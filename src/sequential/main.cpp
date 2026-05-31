@@ -6,9 +6,9 @@
  * Służy jako punkt odniesienia do pomiarów przyspieszenia.
  */
 
-#include "grid.h"
-#include "args.h"
-#include "io.h"
+#include "../common/grid.h"
+#include "../common/args.h"
+#include "../common/io.h"
 
 #include <iostream>
 #include <chrono>

@@ -1,0 +1,28 @@
+=== Dyfuzja Koloru - Wersja Sekwencyjna ===
+=== Konfiguracja ===
+  Rozmiar siatki: 1000 x 1000
+  Iteracje:       1000
+  Szablon:        5-punktowy
+  Katalog wyj.:   output
+  Zapis co:       50 iteracji
+  Benchmark:      TAK
+===================
+Źródła koloru: 6
+  Iteracja 100/1000
+  Iteracja 200/1000
+  Iteracja 300/1000
+  Iteracja 400/1000
+  Iteracja 500/1000
+  Iteracja 600/1000
+  Iteracja 700/1000
+  Iteracja 800/1000
+  Iteracja 900/1000
+  Iteracja 1000/1000
+
+=== Wyniki ===
+  Czas obliczenia: 3.4715 s
+  Iteracje:        1000
+  Rozmiar siatki:  1000 x 1000
+  Czas/iterację:   3.4715 ms
+
+CSV: seq,1000,1000,5,1,3.4715

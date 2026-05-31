@@ -5,8 +5,6 @@ cmake-build-*/
 # Output
 output/
 output_gui/
-results/
-wykresy/
 
 # IDE
 .vscode/

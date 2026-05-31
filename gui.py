@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 GUI do symulacji rozprzestrzeniania koloru (dyfuzja 2D).
-Pozwala na uruchamianie symulacji z roznymi technologiami (Sekwencyjna, OpenMP, MPI, CUDA),
+Pozwala na uruchamianie symulacji: Sekwencyjna, OpenMP, MPI, CUDA;
 wizualizacje wynikow i porownanie wydajnosci.
 
 Uruchomienie z WSL:
@@ -731,7 +731,6 @@ class DiffusionApp(tk.Tk):
             text=f"{name}  ({idx + 1}/{len(self.chart_files)})",
             fg=C.TEXT)
 
-        # Pokaz wykres w tkinter label
         photo = load_png(path, max_w=1000, max_h=600)
         if photo:
             self.chart_photo = photo

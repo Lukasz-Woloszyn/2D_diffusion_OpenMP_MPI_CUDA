@@ -1,0 +1,63 @@
+=== Dyfuzja Koloru - CUDA ===
+  Siatka: 2000x2000, Iter: 1000, Stencil: 5, Block: 8
+  GPU: NVIDIA GeForce RTX 2060 (SM: 7.5, 6143 MB)
+  Iteracja 100/1000
+  Iteracja 200/1000
+  Iteracja 300/1000
+  Iteracja 400/1000
+  Iteracja 500/1000
+  Iteracja 600/1000
+  Iteracja 700/1000
+  Iteracja 800/1000
+  Iteracja 900/1000
+  Iteracja 1000/1000
+
+=== Wyniki ===
+  GPU: NVIDIA GeForce RTX 2060
+  Block: 8x8
+  Czas: 0.6394 s
+  Czas/iter: 0.6394 ms
+
+CSV: cuda,2000,1000,5,8,0.639372
+=== Dyfuzja Koloru - CUDA ===
+  Siatka: 2000x2000, Iter: 1000, Stencil: 5, Block: 16
+  GPU: NVIDIA GeForce RTX 2060 (SM: 7.5, 6143 MB)
+  Iteracja 100/1000
+  Iteracja 200/1000
+  Iteracja 300/1000
+  Iteracja 400/1000
+  Iteracja 500/1000
+  Iteracja 600/1000
+  Iteracja 700/1000
+  Iteracja 800/1000
+  Iteracja 900/1000
+  Iteracja 1000/1000
+
+=== Wyniki ===
+  GPU: NVIDIA GeForce RTX 2060
+  Block: 16x16
+  Czas: 0.5320 s
+  Czas/iter: 0.5320 ms
+
+CSV: cuda,2000,1000,5,16,0.531986
+=== Dyfuzja Koloru - CUDA ===
+  Siatka: 2000x2000, Iter: 1000, Stencil: 5, Block: 32
+  GPU: NVIDIA GeForce RTX 2060 (SM: 7.5, 6143 MB)
+  Iteracja 100/1000
+  Iteracja 200/1000
+  Iteracja 300/1000
+  Iteracja 400/1000
+  Iteracja 500/1000
+  Iteracja 600/1000
+  Iteracja 700/1000
+  Iteracja 800/1000
+  Iteracja 900/1000
+  Iteracja 1000/1000
+
+=== Wyniki ===
+  GPU: NVIDIA GeForce RTX 2060
+  Block: 32x32
+  Czas: 0.4691 s
+  Czas/iter: 0.4691 ms
+
+CSV: cuda,2000,1000,5,32,0.469111

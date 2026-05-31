@@ -1,0 +1,108 @@
+=== Dyfuzja Koloru - OpenMP ===
+  Watki: 1
+=== Konfiguracja ===
+  Rozmiar siatki: 500 x 500
+  Iteracje:       1000
+  Szablon:        5-punktowy
+  Katalog wyj.:   output
+  Zapis co:       50 iteracji
+  Benchmark:      TAK
+===================
+  Iteracja 100/1000
+  Iteracja 200/1000
+  Iteracja 300/1000
+  Iteracja 400/1000
+  Iteracja 500/1000
+  Iteracja 600/1000
+  Iteracja 700/1000
+  Iteracja 800/1000
+  Iteracja 900/1000
+  Iteracja 1000/1000
+
+=== Wyniki ===
+  Watki: 1
+  Czas: 1.05174 s
+  Czas/iter: 1.05174 ms
+
+CSV: omp,500,1000,5,1,1.05174
+=== Dyfuzja Koloru - OpenMP ===
+  Watki: 2
+=== Konfiguracja ===
+  Rozmiar siatki: 500 x 500
+  Iteracje:       1000
+  Szablon:        5-punktowy
+  Katalog wyj.:   output
+  Zapis co:       50 iteracji
+  Benchmark:      TAK
+===================
+  Iteracja 100/1000
+  Iteracja 200/1000
+  Iteracja 300/1000
+  Iteracja 400/1000
+  Iteracja 500/1000
+  Iteracja 600/1000
+  Iteracja 700/1000
+  Iteracja 800/1000
+  Iteracja 900/1000
+  Iteracja 1000/1000
+
+=== Wyniki ===
+  Watki: 2
+  Czas: 0.544071 s
+  Czas/iter: 0.544071 ms
+
+CSV: omp,500,1000,5,2,0.544071
+=== Dyfuzja Koloru - OpenMP ===
+  Watki: 4
+=== Konfiguracja ===
+  Rozmiar siatki: 500 x 500
+  Iteracje:       1000
+  Szablon:        5-punktowy
+  Katalog wyj.:   output
+  Zapis co:       50 iteracji
+  Benchmark:      TAK
+===================
+  Iteracja 100/1000
+  Iteracja 200/1000
+  Iteracja 300/1000
+  Iteracja 400/1000
+  Iteracja 500/1000
+  Iteracja 600/1000
+  Iteracja 700/1000
+  Iteracja 800/1000
+  Iteracja 900/1000
+  Iteracja 1000/1000
+
+=== Wyniki ===
+  Watki: 4
+  Czas: 0.306856 s
+  Czas/iter: 0.306856 ms
+
+CSV: omp,500,1000,5,4,0.306856
+=== Dyfuzja Koloru - OpenMP ===
+  Watki: 8
+=== Konfiguracja ===
+  Rozmiar siatki: 500 x 500
+  Iteracje:       1000
+  Szablon:        5-punktowy
+  Katalog wyj.:   output
+  Zapis co:       50 iteracji
+  Benchmark:      TAK
+===================
+  Iteracja 100/1000
+  Iteracja 200/1000
+  Iteracja 300/1000
+  Iteracja 400/1000
+  Iteracja 500/1000
+  Iteracja 600/1000
+  Iteracja 700/1000
+  Iteracja 800/1000
+  Iteracja 900/1000
+  Iteracja 1000/1000
+
+=== Wyniki ===
+  Watki: 8
+  Czas: 0.253044 s
+  Czas/iter: 0.253044 ms
+
+CSV: omp,500,1000,5,8,0.253044

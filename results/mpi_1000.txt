@@ -1,0 +1,108 @@
+=== Dyfuzja Koloru - MPI ===
+  Procesy: 1
+=== Konfiguracja ===
+  Rozmiar siatki: 1000 x 1000
+  Iteracje:       1000
+  Szablon:        5-punktowy
+  Katalog wyj.:   output
+  Zapis co:       50 iteracji
+  Benchmark:      TAK
+===================
+  Iteracja 100/1000
+  Iteracja 200/1000
+  Iteracja 300/1000
+  Iteracja 400/1000
+  Iteracja 500/1000
+  Iteracja 600/1000
+  Iteracja 700/1000
+  Iteracja 800/1000
+  Iteracja 900/1000
+  Iteracja 1000/1000
+
+=== Wyniki ===
+  Procesy: 1
+  Czas: 3.99785 s
+  Czas/iter: 3.99785 ms
+
+CSV: mpi,1000,1000,5,1,3.99785
+=== Dyfuzja Koloru - MPI ===
+  Procesy: 2
+=== Konfiguracja ===
+  Rozmiar siatki: 1000 x 1000
+  Iteracje:       1000
+  Szablon:        5-punktowy
+  Katalog wyj.:   output
+  Zapis co:       50 iteracji
+  Benchmark:      TAK
+===================
+  Iteracja 100/1000
+  Iteracja 200/1000
+  Iteracja 300/1000
+  Iteracja 400/1000
+  Iteracja 500/1000
+  Iteracja 600/1000
+  Iteracja 700/1000
+  Iteracja 800/1000
+  Iteracja 900/1000
+  Iteracja 1000/1000
+
+=== Wyniki ===
+  Procesy: 2
+  Czas: 2.16956 s
+  Czas/iter: 2.16956 ms
+
+CSV: mpi,1000,1000,5,2,2.16956
+=== Dyfuzja Koloru - MPI ===
+  Procesy: 4
+=== Konfiguracja ===
+  Rozmiar siatki: 1000 x 1000
+  Iteracje:       1000
+  Szablon:        5-punktowy
+  Katalog wyj.:   output
+  Zapis co:       50 iteracji
+  Benchmark:      TAK
+===================
+  Iteracja 100/1000
+  Iteracja 200/1000
+  Iteracja 300/1000
+  Iteracja 400/1000
+  Iteracja 500/1000
+  Iteracja 600/1000
+  Iteracja 700/1000
+  Iteracja 800/1000
+  Iteracja 900/1000
+  Iteracja 1000/1000
+
+=== Wyniki ===
+  Procesy: 4
+  Czas: 1.5874 s
+  Czas/iter: 1.5874 ms
+
+CSV: mpi,1000,1000,5,4,1.5874
+=== Dyfuzja Koloru - MPI ===
+  Procesy: 8
+=== Konfiguracja ===
+  Rozmiar siatki: 1000 x 1000
+  Iteracje:       1000
+  Szablon:        5-punktowy
+  Katalog wyj.:   output
+  Zapis co:       50 iteracji
+  Benchmark:      TAK
+===================
+  Iteracja 100/1000
+  Iteracja 200/1000
+  Iteracja 300/1000
+  Iteracja 400/1000
+  Iteracja 500/1000
+  Iteracja 600/1000
+  Iteracja 700/1000
+  Iteracja 800/1000
+  Iteracja 900/1000
+  Iteracja 1000/1000
+
+=== Wyniki ===
+  Procesy: 8
+  Czas: 1.30472 s
+  Czas/iter: 1.30472 ms
+
+CSV: mpi,1000,1000,5,8,1.30472
