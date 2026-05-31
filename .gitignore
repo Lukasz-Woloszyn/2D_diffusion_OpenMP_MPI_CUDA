@@ -6,6 +6,10 @@ cmake-build-*/
 output/
 output_gui/
 
+# Dokumenty
+sprawozdanie.md
+sciaga.md
+
 # IDE
 .vscode/
 .idea/
