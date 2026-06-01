@@ -18,10 +18,11 @@ Na początku w kilku punktach siatki znajdują się źródła koloru (czerwony, 
 
 ### System i Kompilacja (Backend C++/CUDA)
 - System operacyjny: Linux (bezpośrednio lub poprzez WSL2 na Windows)
-- GCC/G++ z obsługą OpenMP (>= 9.0)
-- MPICH lub OpenMPI
-- NVIDIA CUDA Toolkit (>= 11.0)
-- CMake (>= 3.18)
+- Aby zainstalować wszystkie wymagane narzędzia w systemie Ubuntu / WSL2, wykonaj w terminalu polecenie:
+  ```bash
+  sudo apt update
+  sudo apt install build-essential cmake openmpi-bin libopenmpi-dev nvidia-cuda-toolkit python3-pip python3-tk
+  ```
 
 ### Interfejs Graficzny (Python)
 - Python 3.8+
